@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="Portfolio of Kapil Yadav, a Finance &amp; Accounts Professional in Delhi NCR — audit-ready financials, statutory compliance and MIS reporting.">
+<title>Kapil Yadav — Finance &amp; Accounts Professional</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<style>
+@import url("https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@900,800,700,500,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+
+:root{
+  --ink:#111111;
+  --paper:#f9f9f7;
+  --cobalt:#0047ff;
+  --line:#d2d2ce;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans",sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4,.font-display{font-family:"Cabinet Grotesk",sans-serif;}
+.font-mono{font-family:"IBM Plex Mono",monospace;}
+::selection{background:var(--cobalt);color:#fff;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer;}
+
+.wrap{max-width:1400px;margin:0 auto;padding-inline:20px;}
+@media(min-width:768px){.wrap{padding-inline:40px;}}
+
+/* Overline label */
+.overline{
+  text-transform:uppercase;
+  letter-spacing:.22em;
+  font-size:.7rem;
+  font-weight:600;
+  color:var(--cobalt);
+  font-family:"IBM Plex Mono",monospace;
+}
+
+/* Marquee */
+.marquee-track{display:flex;width:max-content;animation:marquee-scroll 38s linear infinite;}
+.marquee-track:hover{animation-play-state:paused;}
+@keyframes marquee-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.marquee-item{display:flex;align-items:center;flex-shrink:0;}
+.marquee-item span.word{
+  font-family:"Cabinet Grotesk",sans-serif;
+  font-weight:900;
+  font-size:clamp(2.5rem,7vw,6rem);
+  padding-inline:2rem;
+  white-space:nowrap;
+  color:transparent;
+  -webkit-text-stroke:1.5px var(--line);
+}
+.marquee-item .dot{height:14px;width:14px;background:var(--cobalt);flex-shrink:0;}
+@media(min-width:768px){.marquee-item .dot{height:16px;width:16px;}}
+
+/* Outline / stroke text */
+.stroke-text{color:transparent;-webkit-text-stroke:1.5px var(--line);}
+
+/* Duotone hover for headshot */
+.duotone{filter:grayscale(100%) contrast(1.05);transition:filter .6s ease;}
+.duotone:hover{filter:grayscale(0%) contrast(1);}
+
+/* nav */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:50;transition:background-color .4s,padding .4s,border-color .4s;padding-block:20px;background:transparent;}
+.navbar.scrolled{background:rgba(249,249,247,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);padding-block:12px;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:8px;}
+.nav-logo .dot{height:10px;width:10px;background:var(--cobalt);}
+.nav-logo span.name{font-family:"Cabinet Grotesk",sans-serif;font-weight:800;letter-spacing:-.02em;font-size:1.125rem;}
+.nav-links{display:none;align-items:center;gap:2rem;}
+@media(min-width:768px){.nav-links{display:flex;}}
+.nav-links button{color:#555;transition:color .3s;}
+.nav-links button:hover{color:var(--cobalt);}
+.nav-resume{display:inline-flex;align-items:center;gap:6px;background:var(--ink);color:#fff;padding:8px 16px;font-size:.75rem;font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.15em;transition:background .3s;}
+.nav-resume:hover{background:var(--cobalt);}
+.nav-mobile-toggle{display:block;}
+@media(min-width:768px){.nav-mobile-toggle{display:none;}}
+.mobile-menu{display:none;flex-direction:column;gap:0;background:var(--paper);border-top:1px solid var(--line);}
+.mobile-menu.open{display:flex;}
+.mobile-menu button{text-align:left;padding:16px 20px;border-bottom:1px solid var(--line);}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:16px 24px;font-size:.875rem;font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.15em;transition:background .3s,color .3s;}
+.btn-primary{background:var(--cobalt);color:#fff;}
+.btn-primary:hover{background:var(--ink);}
+.btn-outline{border:1px solid var(--ink);color:var(--ink);}
+.btn-outline:hover{background:var(--ink);color:#fff;}
+
+/* sections */
+section{padding-block:6rem;}
+@media(min-width:768px){section{padding-block:8rem;}}
+.section-head{padding-top:1.5rem;border-top:1px solid var(--ink);margin-bottom:3.5rem;display:flex;flex-direction:column;gap:1.5rem;}
+@media(min-width:768px){.section-head{flex-direction:row;align-items:flex-end;justify-content:space-between;}}
+.section-head h2{font-size:2.25rem;font-weight:800;letter-spacing:-.02em;line-height:1;}
+@media(min-width:768px){.section-head h2{font-size:3.75rem;}}
+
+/* hero */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:8rem;padding-bottom:4rem;}
+.hero-top-row{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:1rem;margin-bottom:2.5rem;flex-wrap:wrap;gap:8px;}
+.hero h1{font-weight:900;line-height:.9;letter-spacing:-.03em;font-size:16vw;}
+@media(min-width:768px){.hero h1{font-size:13vw;}}
+@media(min-width:1024px){.hero h1{font-size:10.5rem;}}
+.hero h1 .blue{color:var(--cobalt);}
+.hero-tagline-row{display:grid;gap:2rem;align-items:end;border-top:1px solid var(--line);padding-top:2rem;margin-top:2.5rem;}
+@media(min-width:768px){.hero-tagline-row{grid-template-columns:repeat(12,1fr);}}
+.hero-tagline{font-size:1.125rem;line-height:1.6;color:#333;max-width:42rem;}
+@media(min-width:768px){.hero-tagline{grid-column:span 7;font-size:1.25rem;}}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.75rem;}
+@media(min-width:768px){.hero-cta{grid-column:span 5;justify-content:flex-end;}}
+
+/* about */
+.about-grid{display:grid;gap:2.5rem;align-items:start;}
+@media(min-width:768px){.about-grid{grid-template-columns:repeat(12,1fr);gap:4rem;}}
+.about-photo-col{}
+@media(min-width:768px){.about-photo-col{grid-column:span 5;}}
+@media(min-width:1024px){.about-photo-col{grid-column:span 4;}}
+.about-photo-frame{position:relative;overflow:hidden;aspect-ratio:3/4;background:#eaeae6;border:1px solid var(--line);}
+.about-photo-frame img{position:absolute;inset:0;height:116%;width:100%;object-fit:cover;object-position:top;top:-8%;}
+.about-photo-tag{position:absolute;top:12px;left:12px;background:var(--paper);padding:4px 8px;border:1px solid var(--line);}
+.about-meta{display:flex;justify-content:space-between;margin-top:1rem;border-top:1px solid var(--line);padding-top:.75rem;font-family:"IBM Plex Mono",monospace;font-size:.75rem;}
+.about-meta .blue{color:var(--cobalt);}
+.about-copy-col{}
+@media(min-width:768px){.about-copy-col{grid-column:span 7;}}
+@media(min-width:1024px){.about-copy-col{grid-column:span 8;}}
+.about-copy-col h2{font-size:1.875rem;font-weight:800;letter-spacing:-.02em;line-height:1.05;max-width:48rem;}
+@media(min-width:768px){.about-copy-col h2{font-size:3rem;}}
+.about-copy-col h2 .blue{color:var(--cobalt);}
+.about-copy-col p.body{margin-top:2rem;font-size:1rem;line-height:1.7;color:#444;max-width:42rem;}
+@media(min-width:768px){.about-copy-col p.body{font-size:1.125rem;}}
+.stats-grid{margin-top:3.5rem;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+@media(min-width:1024px){.stats-grid{grid-template-columns:repeat(4,1fr);}}
+.stat{background:var(--paper);padding:1.5rem;}
+.stat .num{font-family:"Cabinet Grotesk",sans-serif;font-weight:900;font-size:2.5rem;letter-spacing:-.02em;}
+@media(min-width:768px){.stat .num{font-size:3rem;}}
+.stat .label{margin-top:.5rem;font-family:"IBM Plex Mono",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:#555;}
+
+/* competencies */
+.comp-lede{max-width:24rem;color:#555;font-size:1rem;line-height:1.6;}
+.comp-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
+@media(min-width:640px){.comp-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1024px){.comp-grid{grid-template-columns:repeat(3,1fr);}}
+.comp-card{background:#fff;padding:2rem;transition:background .5s;}
+.comp-card:hover{background:var(--cobalt);}
+.comp-card:hover *{color:#fff !important;}
+.comp-card-top{display:flex;justify-content:space-between;align-items:flex-start;}
+.comp-card .n{font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:var(--cobalt);}
+.comp-card .sq{height:8px;width:8px;background:var(--cobalt);}
+.comp-card h3{margin-top:2.5rem;font-weight:700;font-size:1.5rem;}
+.comp-card p{margin-top:.75rem;font-size:.875rem;line-height:1.6;color:#555;}
+
+/* marquee section */
+.marquee-section{padding-block:4rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:#fff;}
+@media(min-width:768px){.marquee-section{padding-block:6rem;}}
+
+/* experience */
+.exp-row{display:grid;gap:1rem;border-top:1px solid var(--ink);padding-block:2rem;transition:background .4s;}
+@media(min-width:768px){.exp-row{grid-template-columns:repeat(12,1fr);gap:2rem;padding-block:2.5rem;padding-inline:1rem;}}
+.exp-row:hover{background:#fff;}
+.exp-row:last-of-type{border-bottom:1px solid var(--ink);}
+.exp-year-col{}
+@media(min-width:768px){.exp-year-col{grid-column:span 3;}}
+.exp-year{font-family:"Cabinet Grotesk",sans-serif;font-weight:900;font-size:3rem;color:#eaeae6;line-height:1;transition:color .5s;}
+@media(min-width:768px){.exp-year{font-size:3.75rem;}}
+.exp-row:hover .exp-year{color:var(--cobalt);}
+.exp-period{margin-top:.5rem;font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:#555;}
+.exp-role-col{}
+@media(min-width:768px){.exp-role-col{grid-column:span 5;}}
+.exp-role-col h3{font-weight:700;font-size:1.5rem;}
+.exp-role-col .company{margin-top:.25rem;color:var(--cobalt);font-weight:500;}
+.exp-role-col .place{margin-top:.25rem;font-family:"IBM Plex Mono",monospace;font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;color:#777;}
+.exp-list-col{}
+@media(min-width:768px){.exp-list-col{grid-column:span 4;}}
+.exp-list-col ul{list-style:none;display:flex;flex-direction:column;gap:.75rem;}
+.exp-list-col li{display:flex;gap:.75rem;font-size:.875rem;color:#555;line-height:1.6;}
+.exp-list-col li::before{content:"";margin-top:.5em;height:4px;width:4px;background:var(--cobalt);flex-shrink:0;}
+
+/* projects */
+.proj-lede{max-width:24rem;color:#555;}
+.proj-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
+@media(min-width:768px){.proj-grid{grid-template-columns:repeat(3,1fr);}}
+.proj-card{background:#fff;padding:2rem;height:100%;display:flex;flex-direction:column;justify-content:space-between;transition:transform .4s;}
+.proj-card:hover{transform:translateY(-4px);}
+.proj-tag-row{display:flex;justify-content:space-between;align-items:center;}
+.proj-tag{font-family:"IBM Plex Mono",monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;background:var(--cobalt);color:#fff;padding:4px 8px;}
+.proj-card h3{margin-top:2rem;font-weight:700;font-size:1.5rem;line-height:1.2;}
+.proj-card p{margin-top:1rem;font-size:.875rem;line-height:1.6;color:#555;}
+.proj-foot{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--line);}
+.proj-foot .period{font-family:"IBM Plex Mono",monospace;font-size:.75rem;}
+.proj-foot .via{font-family:"IBM Plex Mono",monospace;font-size:11px;color:#888;margin-top:.25rem;}
+
+/* skills / education */
+.tools-wrap{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:5rem;}
+.tool-chip{font-family:"IBM Plex Mono",monospace;font-size:.875rem;border:1px solid var(--line);background:#fff;padding:10px 16px;transition:border-color .3s,color .3s;}
+.tool-chip:hover{border-color:var(--cobalt);color:var(--cobalt);}
+.se-grid{display:grid;gap:2.5rem;}
+@media(min-width:768px){.se-grid{grid-template-columns:repeat(2,1fr);gap:4rem;}}
+.se-head{display:flex;align-items:center;gap:.75rem;border-top:1px solid var(--ink);padding-top:1.25rem;margin-bottom:2rem;}
+.se-head h3{font-weight:700;font-size:1.25rem;}
+.se-item{padding-block:1.25rem;border-bottom:1px solid var(--line);}
+.se-item-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;}
+.se-item h4{font-weight:500;font-size:1.125rem;}
+.se-item .period{font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:var(--cobalt);flex-shrink:0;}
+.se-item .school{margin-top:.25rem;font-size:.875rem;color:#555;}
+.cert-item{padding-block:1.25rem;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:1rem;}
+.cert-item h4{font-weight:500;}
+.cert-item .by{font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:#555;flex-shrink:0;text-align:right;}
+
+/* contact */
+.contact-grid{display:grid;gap:3rem;}
+@media(min-width:768px){.contact-grid{grid-template-columns:repeat(12,1fr);gap:5rem;}}
+.contact-info{}
+@media(min-width:768px){.contact-info{grid-column:span 5;}}
+.contact-info h2{font-weight:900;letter-spacing:-.02em;line-height:.9;font-size:3rem;}
+@media(min-width:768px){.contact-info h2{font-size:4.5rem;}}
+.contact-info h2 .blue{color:var(--cobalt);}
+.contact-info p.lede{margin-top:1.5rem;color:#555;font-size:1.125rem;max-width:28rem;line-height:1.6;}
+.contact-links{margin-top:3rem;}
+.contact-link{display:flex;align-items:center;gap:1rem;padding-block:1rem;border-top:1px solid var(--line);transition:color .3s;}
+.contact-link .icon{color:var(--cobalt);flex-shrink:0;}
+.contact-link .cl-label{font-family:"IBM Plex Mono",monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:#888;}
+.contact-link .cl-value{transition:color .3s;}
+.contact-link:hover .cl-value{color:var(--cobalt);}
+.contact-form-col{}
+@media(min-width:768px){.contact-form-col{grid-column:span 7;}}
+.contact-form{border:1px solid var(--line);background:#fff;padding:2rem;}
+@media(min-width:768px){.contact-form{padding:2.5rem;}}
+.form-row{display:grid;gap:1.5rem;}
+@media(min-width:640px){.form-row{grid-template-columns:repeat(2,1fr);}}
+.field label{display:block;margin-bottom:.5rem;color:#555;}
+.field input,.field textarea{width:100%;background:transparent;border:none;border-bottom:1px solid var(--line);padding-block:1rem;font-family:inherit;font-size:1rem;color:var(--ink);transition:border-color .3s;}
+.field input::placeholder,.field textarea::placeholder{color:#999;}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--cobalt);}
+.field textarea{resize:none;}
+.field{margin-top:1.5rem;}
+.form-row .field{margin-top:0;}
+.form-submit{margin-top:2rem;}
+.form-note{margin-top:1rem;font-size:.75rem;color:#888;}
+
+/* footer */
+footer{background:var(--ink);color:#fff;}
+.footer-top{display:flex;flex-direction:column;justify-content:space-between;gap:2.5rem;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:3rem;}
+@media(min-width:768px){.footer-top{flex-direction:row;}}
+.footer-top h3{font-weight:900;letter-spacing:-.02em;line-height:1;font-size:2.5rem;}
+@media(min-width:768px){.footer-top h3{font-size:3.75rem;}}
+.footer-top h3 .blue{color:#4d7bff;}
+.footer-top p{margin-top:1rem;color:rgba(255,255,255,.6);max-width:24rem;}
+.footer-links{display:flex;flex-direction:column;gap:.75rem;}
+@media(min-width:768px){.footer-links{text-align:right;}}
+.footer-links a{color:rgba(255,255,255,.8);transition:color .3s;}
+.footer-links a:hover{color:#fff;}
+.footer-bottom{display:flex;flex-direction:column;gap:1rem;justify-content:space-between;align-items:flex-start;padding-top:2rem;}
+@media(min-width:640px){.footer-bottom{flex-direction:row;align-items:center;}}
+.footer-bottom p{font-family:"IBM Plex Mono",monospace;font-size:.75rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.15em;}
+.footer-bottom button{font-family:"IBM Plex Mono",monospace;font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;color:rgba(255,255,255,.7);transition:color .3s;}
+.footer-bottom button:hover{color:#4d7bff;}
+
+/* toast (simple, no library) */
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:12px 20px;font-family:"IBM Plex Mono",monospace;font-size:.8rem;border-radius:4px;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:999;}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+}
+</style>
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <div class="wrap nav-inner">
+    <button class="nav-logo" onclick="scrollToId('top')">
+      <span class="dot"></span>
+      <span class="name">Kapil Yadav</span>
+    </button>
+    <nav class="nav-links">
+      <button onclick="scrollToId('about')" class="overline">About</button>
+      <button onclick="scrollToId('competencies')" class="overline">Expertise</button>
+      <button onclick="scrollToId('experience')" class="overline">Experience</button>
+      <button onclick="scrollToId('projects')" class="overline">Projects</button>
+      <button onclick="scrollToId('skills')" class="overline">Skills</button>
+      <button onclick="scrollToId('contact')" class="overline">Contact</button>
+      <a class="nav-resume" href="https://resume-hub-361.preview.emergentagent.com/assets/kapil-resume.pdf" download>
+        Resume
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+      </a>
+    </nav>
+    <button class="nav-mobile-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Toggle menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16"/><path d="M4 18h16"/><path d="M4 6h16"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button onclick="scrollToId('about');closeMobile()">About</button>
+    <button onclick="scrollToId('competencies');closeMobile()">Expertise</button>
+    <button onclick="scrollToId('experience');closeMobile()">Experience</button>
+    <button onclick="scrollToId('projects');closeMobile()">Projects</button>
+    <button onclick="scrollToId('skills');closeMobile()">Skills</button>
+    <button onclick="scrollToId('contact');closeMobile()">Contact</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero wrap" id="top">
+    <div class="hero-top-row">
+      <span class="overline"></span>
+      <span class="overline"></span>
+      <span class="overline"></span>
+    </div>
+    <div>
+      <p class="overline" style="margin-bottom:1.5rem;display:flex;align-items:center;gap:8px;">
+        <span style="height:6px;width:6px;background:var(--cobalt);display:inline-block;"></span>
+        Finance &amp; Accounts Professional
+      </p>
+      <h1><span>KAPlL</span><span class="blue"> YADAV<span style="color:var(--ink);">.</span></span></h1>
+    </div>
+    <div class="hero-tagline-row">
+      <p class="hero-tagline">Driving audit-ready financials, statutory compliance excellence, and management reporting to support informed business decisions.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://resume-hub-361.preview.emergentagent.com/assets/kapil-resume.pdf" download>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
+          Download Resume
+        </a>
+        <button class="btn btn-outline" onclick="scrollToId('contact')">
+          Get in Touch
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m7 7 10 10"/><path d="M17 7v10H7"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="wrap" id="about">
+    <div class="about-grid">
+      <div class="about-photo-col">
+        <div class="about-photo-frame">
+          <img src="kapil-photo.jpg" alt="Kapil Yadav" class="duotone">
+          <div class="about-photo-tag overline">01 / About</div>
+        </div>
+        <div class="about-meta">
+          <span>Delhi NCR, India</span>
+          <span class="blue">MBA · Finance</span>
+        </div>
+      </div>
+      <div class="about-copy-col">
+        <p class="overline" style="margin-bottom:1.5rem;">Professional Summary</p>
+        <h2>Precision-driven finance, built on <span class="blue">compliance</span> and <span class="stroke-text">clarity</span>.</h2>
+        <p class="body">Finance &amp; Accounting professional with hands-on experience in bookkeeping, statutory compliance, and finalization of accounts across multiple industries and client environments. I specialize in maintaining accurate books of accounts, preparing AS/IND-AS compliant financial statements, and executing GST, TDS &amp; Income Tax compliances with precision and timeliness. With strong working knowledge of Tally Prime, Busy, and Advanced Excel, I bring a detail-oriented, process-driven approach to financial reporting — spanning consulting and corporate mandates including Seasons Group of Companies and NDTV GoodTimes.</p>
+        <div class="stats-grid">
+          <div class="stat"><div class="num">6+</div><div class="label">Years of Experience</div></div>
+          <div class="stat"><div class="num">40+</div><div class="label">Client Engagements</div></div>
+          <div class="stat"><div class="num">100%</div><div class="label">Compliance Record</div></div>
+          <div class="stat"><div class="num">3</div><div class="label">Marquee Retainerships</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETENCIES -->
+  <section class="wrap" id="competencies">
+    <div class="section-head">
+      <div>
+        <p class="overline" style="margin-bottom:1rem;">02 / Core Competencies</p>
+        <h2>What I do best</h2>
+      </div>
+      <p class="comp-lede">A compliance-first, process-driven approach to accounting, taxation and financial reporting.</p>
+    </div>
+    <div class="comp-grid" id="compGrid"></div>
+  </section>
+
+  <!-- MARQUEE -->
+  <section class="marquee-section">
+    <div class="marquee-track" id="marqueeTrack"></div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="wrap" id="experience">
+    <div style="margin-bottom:3.5rem;">
+      <p class="overline" style="margin-bottom:1rem;">03 / Experience</p>
+      <h2 style="font-size:2.25rem;font-weight:800;letter-spacing:-.02em;line-height:1;">Where I've worked</h2>
+    </div>
+    <div id="expList"></div>
+  </section>
+
+  <!-- PROJECTS / RETAINERSHIPS -->
+  <section class="wrap" id="projects">
+    <div class="section-head">
+      <div>
+        <p class="overline" style="margin-bottom:1rem;">04 / Key Retainerships</p>
+        <h2>Marquee engagements</h2>
+      </div>
+      <p class="proj-lede">Selected mandates delivered across consulting and corporate environments.</p>
+    </div>
+    <div class="proj-grid" id="projGrid"></div>
+  </section>
+
+  <!-- SKILLS / EDUCATION -->
+  <section class="wrap" id="skills">
+    <div style="margin-bottom:3.5rem;">
+      <p class="overline" style="margin-bottom:1rem;">05 / Tools &amp; Education</p>
+      <h2 style="font-size:2.25rem;font-weight:800;letter-spacing:-.02em;line-height:1;">The toolkit</h2>
+    </div>
+    <div class="tools-wrap" id="toolsWrap"></div>
+    <div class="se-grid">
+      <div>
+        <div class="se-head">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--cobalt);"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+          <h3>Education</h3>
+        </div>
+        <div id="eduList"></div>
+      </div>
+      <div>
+        <div class="se-head">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--cobalt);"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>
+          <h3>Certifications</h3>
+        </div>
+        <div id="certList"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="wrap" id="contact">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="overline" style="margin-bottom:1rem;">06 / Contact</p>
+        <h2>Let's <span class="blue">talk</span> numbers.</h2>
+        <p class="lede">Open to finance &amp; accounting roles, retainerships and consulting mandates. Reach out and I'll respond promptly.</p>
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:ydvkapil09@gmail.com">
+            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            <div style="flex:1;"><div class="cl-label">Email</div><div class="cl-value">ydvkapil09@gmail.com</div></div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:#888;"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+          <a class="contact-link" href="tel:+91-9821424493">
+            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+            <div style="flex:1;"><div class="cl-label">Phone</div><div class="cl-value">+91-9821424493</div></div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:#888;"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/in/kapilyadav09" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            <div style="flex:1;"><div class="cl-label">LinkedIn</div><div class="cl-value">linkedin.com/in/kapilyadav09</div></div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:#888;"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+          <div class="contact-link" style="cursor:default;">
+            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            <div style="flex:1;"><div class="cl-label">Location</div><div class="cl-value">Delhi NCR, India</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-col">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="field"><label class="overline">Name *</label><input type="text" name="name" placeholder="Your name" required></div>
+            <div class="field"><label class="overline">Email *</label><input type="email" name="email" placeholder="you@company.com" required></div>
+          </div>
+          <div class="field"><label class="overline">Subject</label><input type="text" name="subject" placeholder="What's this about?"></div>
+          <div class="field"><label class="overline">Message *</label><textarea name="message" rows="5" placeholder="Tell me a little about the opportunity..." required></textarea></div>
+          <button type="submit" class="btn btn-primary form-submit" style="width:100%;justify-content:center;">Send Message</button>
+          <p class="form-note">This form is a static demo — wire it to an email service (e.g. Formspree) or backend to receive submissions.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap" style="padding-block:4rem;">
+    <div class="footer-top">
+      <div>
+        <h3>KAPIL YADAV<span class="blue">.</span></h3>
+        <p>Finance &amp; Accounts Professional · Delhi NCR, India</p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:ydvkapil09@gmail.com">ydvkapil09@gmail.com</a>
+        <a href="tel:+91-9821424493">+91-9821424493</a>
+        <a href="https://www.linkedin.com/in/kapilyadav09" target="_blank" rel="noopener noreferrer">linkedin.com/in/kapilyadav09</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Kapil Yadav — All rights reserved</p>
+      <button onclick="scrollToId('top')">Back to top ↑</button>
+    </div>
+  </div>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+/* ---------- data (from data/portfolio.js) ---------- */
+const COMPETENCIES = [
+  {n:"01",title:"Book Finalization",desc:"End-to-end financial accounting, ledger scrutiny and finalization per AS / Ind-AS."},
+  {n:"02",title:"Statutory Compliance",desc:"GST, TDS &amp; Income Tax filings, reconciliations (GSTR-1/3B/2B) and documentation."},
+  {n:"03",title:"MIS &amp; Reporting",desc:"Monthly &amp; quarterly MIS on revenue, cost, profitability and working capital."},
+  {n:"04",title:"Reconciliations",desc:"Bank, vendor, customer and inter-company reconciliations with control focus."},
+  {n:"05",title:"Audit Coordination",desc:"Statutory, internal and tax audit support with strong documentation discipline."},
+  {n:"06",title:"Process Improvement",desc:"Internal controls, SOP adherence and Excel-driven automation of workflows."}
+];
+
+const MARQUEE_WORDS = ["COMPLIANCE","AUDIT-READY FINANCIALS","MIS REPORTING","PROCESS IMPROVEMENT","AS / IND-AS","RECONCILIATIONS"];
+
+const EXPERIENCE = [
+  {year:"2025",period:"Sep 2025 — Present",role:"Accounts Analyst",company:"Fluidech IT Services Pvt. Ltd.",place:"Gurugram · On-site",points:[
+    "Manage the complete accounting cycle — journals, GL, trial balance and finalization per AS / Ind-AS with full reconciliations.",
+    "Handle month/year-end closing and support P&amp;L, Balance Sheet and Cash Flow preparation with GST, TDS &amp; Income Tax compliance.",
+    "Handle LUT filings and GST refund workings for export of services; deliver MIS using Advanced Excel and Zoho Books."
+  ]},
+  {year:"2023",period:"Dec 2023 — Sep 2025",role:"Senior Executive",company:"Eight Square Consulting",place:"Gurugram · Hybrid",points:[
+    "Owned finalization of accounts, ledger scrutiny and multi-party reconciliations across client mandates.",
+    "Managed GST/TDS/Income Tax filings, audits and regulatory notices; served as finance SPOC for stakeholders and auditors.",
+    "Conducted variance analysis against budgets to drive cost optimization using Tally Prime and Busy."
+  ]},
+  {year:"2022",period:"Dec 2022 — Dec 2023",role:"Senior Executive — Accounts &amp; Taxation",company:"Sujeet Choudhary &amp; Associates",place:"Gurugram · On-site",points:[
+    "Managed GST, TDS and Income Tax compliances covering return filings and reconciliations (GSTR-1, 3B, 2B).",
+    "Performed detailed ledger scrutiny, balance sheet and bank reconciliations, coordinating statutory and tax audits.",
+    "Delivered management-level MIS reports and financial analysis using Advanced Excel."
+  ]},
+  {year:"2019",period:"Sep 2019 — Nov 2022",role:"Taxation &amp; Accounts Assistant",company:"N.K. Bansal &amp; Co., Chartered Accountants",place:"New Delhi / Gurugram · On-site",points:[
+    "Executed end-to-end bookkeeping, GL management and month/year-end closures with exposure to AS / Ind-AS.",
+    "Managed GST, TDS and Income Tax compliances and statutory documentation for multiple clients.",
+    "Built a strong foundation in accounting, reconciliations and audit support practices."
+  ]}
+];
+
+const PROJECTS = [
+  {tag:"Transformation",client:"Seasons Group of Companies",desc:"End-to-end financial accounting review, statutory compliance and MIS reporting transformation — bookkeeping, GL management, month/year-end closures and AS/Ind-AS finalization with streamlined reporting on Tally Prime.",period:"Dec 2023 — Jun 2025",via:"via Eight Square Consulting"},
+  {tag:"Retainership",client:"NDTV GoodTimes",desc:"Oversaw the complete accounting cycle and finalization of accounts, periodic reconciliations and closings. Ensured GST, TDS &amp; Income Tax compliance with MIS, variance analysis and strengthened internal controls.",period:"Mar 2024 — Apr 2025",via:"via Eight Square Consulting"},
+  {tag:"Review",client:"Wingreens Farms Pvt. Ltd.",desc:"End-to-end financial accounting review, statutory compliance and MIS reporting — GST/TDS/Income Tax compliance, ledger scrutiny, reconciliations and coordination of statutory, internal and tax audits.",period:"Sep 2019 — Nov 2022",via:"via N.K. Bansal &amp; Co."}
+];
+
+const TOOLS = ["Tally Prime","Busy","Advanced Excel","Zoho Books","GST · GSTR-1/3B/2B","TDS · 24Q/26Q","Income Tax","Form 15CA / 15CB","AS / Ind-AS","LUT &amp; Export Refunds","MIS &amp; Pivot Tables","Variance Analysis"];
+
+const EDUCATION = [
+  {degree:"MBA — Finance &amp; International Business",period:"2023 — 2025",school:"Manipal University Jaipur"},
+  {degree:"B.Com (Hons.) — Accounting &amp; Finance",period:"2019 — 2021",school:"University of Delhi"}
+];
+
+const CERTIFICATIONS = [
+  {name:"Audit Simulation",by:"PwC"},
+  {name:"Digital Personal Data Protection Act 2023",by:"DPDPA.com"},
+  {name:"Research Methodologies",by:"Queen Mary University of London"},
+  {name:"International Business",by:"University of Colorado Boulder"}
+];
+
+const arrowSvg = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>';
+
+/* ---------- render ---------- */
+document.getElementById('compGrid').innerHTML = COMPETENCIES.map(c => `
+  <div class="comp-card">
+    <div class="comp-card-top"><span class="n">${c.n}</span><span class="sq"></span></div>
+    <h3>${c.title}</h3>
+    <p>${c.desc}</p>
+  </div>`).join('');
+
+const marqueeHtml = MARQUEE_WORDS.map(w => `<div class="marquee-item"><span class="word">${w}</span><span class="dot"></span></div>`).join('');
+document.getElementById('marqueeTrack').innerHTML = marqueeHtml + marqueeHtml;
+
+document.getElementById('expList').innerHTML = EXPERIENCE.map(job => `
+  <div class="exp-row">
+    <div class="exp-year-col"><div class="exp-year">${job.year}</div><div class="exp-period">${job.period}</div></div>
+    <div class="exp-role-col"><h3>${job.role}</h3><p class="company">${job.company}</p><p class="place">${job.place}</p></div>
+    <div class="exp-list-col"><ul>${job.points.map(p => `<li>${p}</li>`).join('')}</ul></div>
+  </div>`).join('') + '<div style="border-top:1px solid var(--ink);"></div>';
+
+document.getElementById('projGrid').innerHTML = PROJECTS.map(p => `
+  <article class="proj-card">
+    <div>
+      <div class="proj-tag-row"><span class="proj-tag">${p.tag}</span>${arrowSvg}</div>
+      <h3>${p.client}</h3>
+      <p>${p.desc}</p>
+    </div>
+    <div class="proj-foot"><p class="period">${p.period}</p><p class="via">${p.via}</p></div>
+  </article>`).join('');
+
+document.getElementById('toolsWrap').innerHTML = TOOLS.map(t => `<span class="tool-chip">${t}</span>`).join('');
+
+document.getElementById('eduList').innerHTML = EDUCATION.map(e => `
+  <div class="se-item">
+    <div class="se-item-row"><h4>${e.degree}</h4><span class="period">${e.period}</span></div>
+    <p class="school">${e.school}</p>
+  </div>`).join('');
+
+document.getElementById('certList').innerHTML = CERTIFICATIONS.map(c => `
+  <div class="cert-item"><h4>${c.name}</h4><span class="by">${c.by}</span></div>`).join('');
+
+/* ---------- interactions ---------- */
+function scrollToId(id){
+  const el = document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth'});
+}
+function closeMobile(){
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const toast = document.getElementById('toast');
+  toast.textContent = 'Message ready — connect this form to an email service to send it.';
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3500);
+  this.reset();
+});
+</script>
+</body>
+</html>
